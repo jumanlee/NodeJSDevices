@@ -1,0 +1,23 @@
+#form
+{
+    display: block;
+}
+
+#form > div
+{
+    display: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-right: 10px;
+}
+
+.hidden-option
+{
+    display: none;
+}
+
+#adddevice
+{
+    display: none;
+}
+

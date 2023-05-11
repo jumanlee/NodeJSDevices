@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="MySmartHome">
+    <meta name="author" content="NJL">
+    <meta name="keywords" content="MySmartHome, mysmarthome">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/add.css">
+    <title>Welcome to MySmartHome!</title>
+</head>
+
+<body>
+    <main>
+
+        <div>
+            <div>
+                <a href="/"><span>Home</span></a>
+        
+                <a href="/about"><span class="pointer">About</span></a>
+        
+                <a href="/add"><span class="pointer">Add a device</span></a>
+        
+                <a href="/show"><span class="pointer">View device statuses</span></a>
+        
+                <a href="/update"><span class="pointer">Update device settings</span></a>
+
+                <a href="/delete"><span class="pointer">Delete device</span></a>
+            </div>
+        </div>
+
+        <h1> Please select options to add your advice (the relevant form will only appear once you have selected a device type).
+        </h1>
+
+        <form id="form" method="POST" action="/added">
+            <select name="devicetype" id="selection" onchange="formFilter()">
+                <option value="choosedevice">Choose Device</option>
+                <option value="microwave">Microwave</option>
+                <option value="kettle">Kettle</option>
+                <option value="heating">Heating</option>
+                <option value="aircon">Aircon</option>
+                <option value="vacuumbot">Vacuum Bot</option>
+                <option value="securityalarm">Security Alarm</option>
+                <option value="audioplayer">Audio Player</option>
+                <option value="curtains">Curtains</option>
+                <option value="autogate">Auto Gate</option>
+                <option value="smokedetector">Smoke Detector</option>
+                <option value="cctv">CCTV</option>
+                <option value="lighting">Lighting</option>
+                <option value="tv">TV</option>
+                <option value="securitylock">Security Lock</option>
+                <option value="gardensprinkler">Garden Sprinkler</option>
+                <option value="fridge">Fridge</option>
+                <option value="hob">Hob</option>
+                <option value="garageopener">Garage Opener</option>
+                <option value="fan">Fan</option>
+                <option value="aromatherapy">Aroma Therapy</option>
+            </select>
+
+            <div class="namedevice">
+                <div>Name of Device: </div>
+                <input type="text" name="namedevice" value="name">
+            </div>
+
+            <div class="onoff">
+                <div>On/Off: </div>
+                <select name="onoff">
+                    <option value="off">Off</option>
+                    <option value="on">On</option>
+                    <option class="hidden-option" value="NA">NA</option>
+                </select>
+            </div>
+
+            <div class="openclose">
+                <div>Open/Close: </div>
+                <select name="openclose">
+                    <option value="close">Close</option>
+                    <option value="open">Open</option>
+                    <option class="hidden-option" value="NA">NA</option>
+                </select>
+            </div>
+
+            <div class="wifi">
+                <div>Wifi: </div>
+                <select name="wifi">
+                    <option value="disconnect" selected>Disconnect</option>
+                    <option value="connect">Connect</option>
+                    <option class="hidden-option" value="NA">NA</option>
+                </select>
+            </div>
+
+            <div class="temperature">
+                <div>Temperature: </div>
+                <input type="text" name="temperature" value="">
+            </div>
+
+            <div class="volume">
+                <div>Volume: </div>
+                <input type="text" name="volume" value="">
+            </div>
+
+            <div class="timer">
+                <div>Switch on for how many hours: </div>
+                <input type="text" name="timer" value="">
+            </div>
+
+            <input id="adddevice" onclick="inputNA()" type="submit" value="Add Device" />
+        </form>
+
+    </main>
+</body>
+<script src="/add.js"></script>
+<footer>
+
+</footer>
+
+</html>

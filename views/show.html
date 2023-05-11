@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="MySmartHome">
+    <meta name="author" content="NJL">
+    <meta name="keywords" content="MySmartHome, mysmarthome">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">
+    <title>Status of MySmartHome!</title>
+</head>
+
+<body>
+    <div>
+        <div>
+            <a href="/"><span>Home</span></a>
+    
+            <a href="/about"><span class="pointer">About</span></a>
+    
+            <a href="/add"><span class="pointer">Add a device</span></a>
+    
+            <a href="/show"><span class="pointer">View device statuses</span></a>
+    
+            <a href="/update"><span class="pointer">Update device settings</span></a>
+
+            <a href="/delete"><span class="pointer">Delete device</span></a>
+        </div>
+    </div>
+
+    <h1> Please select a device to view its current settings: </h1>
+    <h3>list of devices:</h3>
+
+    <form>
+        <% if(devices != undefined) devices.forEach(function(device){ %>
+
+        <ul>
+            <li><a href="/show/<%=device.id%>"><%= device.name %> (<%= device.type %>)</a></li>
+        </ul> 
+
+        <% }) %>
+
+        <% if(statuses != undefined){ %>
+        <ul>
+            <%if(statuses[0].name != "NA") {%>
+            <li>Device Name: <%= statuses[0].name %></li>
+            <% }%>
+
+            <%if(statuses[0].type != "NA") {%>
+            <li>Device Type: <%= statuses[0].type %></li>
+            <% }%>
+
+            <%if(statuses[0].OnOff != "NA") {%>
+            <li>On/Off Status: <%= statuses[0].OnOff %></li>
+            <% }%>
+
+            <%if(statuses[0].OpenClose != "NA") {%>
+            <li>Open/Close Status: <%= statuses[0].OpenClose %></li>
+            <% }%>
+
+            <%if(statuses[0].wifi != "NA") {%>
+            <li>Wifi: <%= statuses[0].wifi %></li>
+            <% }%>
+
+            <%if(statuses[0].temperature != "NA") {%>
+            <li>Temperature: <%= statuses[0].temperature %></li>
+            <% }%>
+
+            <%if(statuses[0].volume != "NA") {%>
+            <li>Volume: <%= statuses[0].volume %></li>
+            <% }%>
+
+            <%if(statuses[0].timer != "NA") {%>
+            <li>Timer: <%= statuses[0].timer %></li>
+            <% }%>
+        </ul>
+
+        <a href="/show">Back to Status Page</a>
+        <% } %>
+
+    </form>
+
+    <script src="/show.js"></script>
+</body>
+
+</html>

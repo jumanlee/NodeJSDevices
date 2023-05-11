@@ -1,0 +1,15 @@
+.statuses li
+{
+    display: flex;
+    margin-top: 15px;
+}
+
+.input-field
+{
+    margin-left: 10px;
+}
+
+.hidden-field
+{
+    display: none;
+}

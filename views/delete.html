@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="MySmartHome">
+    <meta name="author" content="NJL">
+    <meta name="keywords" content="MySmartHome, mysmarthome">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/update.css">
+    <title>Status of MySmartHome!</title>
+</head>
+
+<body>
+    <div>
+        <div>
+            <a href="/"><span>Home</span></a>
+
+            <a href="/about"><span class="pointer">About</span></a>
+
+            <a href="/add"><span class="pointer">Add a device</span></a>
+
+            <a href="/show"><span class="pointer">View device statuses</span></a>
+
+            <a href="/update"><span class="pointer">Update device settings</span></a>
+
+            <a href="/delete"><span class="pointer">Delete device</span></a>
+        </div>
+    </div>
+
+    <h1> Please select device to delete: </h1>
+
+    <h3>list of existing devices:</h3>
+
+    <form method="POST" action="/deleted" onSubmit="return confirm('Are you sure you wish to delete?');">
+        <% if(devices != undefined) devices.forEach(function(device){ %>
+        <ul>
+            <li>
+            <a><%= device.name %> (<%= device.type %>)</a>
+            <button type="submit" name="submit" value="<%= device.id %>">Delete</button>
+            </li>
+        </ul>
+        <% }) %>
+
+    </form>
+
+    <script src="/show.js"></script>
+</body>
+
+</html>

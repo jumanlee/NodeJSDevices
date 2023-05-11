@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+    <head>
+        <title>List of shopping items</title>
+    </head>
+    <body>
+        <h1>List of shopping items:</h1>
+        <ul>
+            <% availableItems.forEach(function(item){ %>
+            <li><%= item.name %>, £<%= item.price %></a></li>
+            <% }) %>
+        </ul> 
+    </body>
+
+</html>
