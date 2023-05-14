@@ -1,4 +1,7 @@
 # MySmartHome
+## Demo on Youtube
+You can watch the demo of this app at https://www.youtube.com/watch?v=x8iqbe_MoKY
+
 ## Introduction
 This a new dynamic web application which allows users to monitor and control devices in their smart home. The app is just a prototype so it doesn’t need interface with actual hardware. Its front end is kept to the minimum to only showcase the backend business logic and functionalities.
 
