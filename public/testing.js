@@ -16,6 +16,7 @@ app.post(“/login", function (req, res)
             } 
             //if result has a length of more than 0, this means the 
             //database contains the username and password. Then proceed to authenticate user.
+            //test case exceeded
             if (result.length > 0)
             {
                 req.session.loggedin = true;
